@@ -1,22 +1,8 @@
 pipeline {
-    agent {
-        node {
-            label 'docker-agent-alpine'
-        }
-    }
-    stages {
-        stage('Install Maven') {
-            steps {
-                // Install Maven
-                script {
-                    def mvnHome = tool 'maven:3.5.0'
-                    env.PATH = "${mvnHome}/bin:${env.PATH}"
-                }
-            }
-        }
-   // tools {
-       // maven 'maven_3_5_0'
-   // }
+    agent any 
+    tools {
+       maven 'maven'
+   }
     stages{
         stage('Build Maven'){
             steps{
