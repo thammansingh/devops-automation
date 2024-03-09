@@ -4,9 +4,9 @@ pipeline {
             label 'docker-agent-alpine'
         }
     }
-    tools {
-        maven 'maven_3_5_0'
-    }
+   // tools {
+       // maven 'maven_3_5_0'
+   // }
     stages{
         stage('Build Maven'){
             steps{
